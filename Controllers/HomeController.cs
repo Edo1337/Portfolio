@@ -26,6 +26,10 @@ namespace Portfolio.Controllers
         {
             return View();
         }
+        public IActionResult PetProjects()
+        {
+            return View();
+        }
         public IActionResult Portfolio()
         {
             return View();
