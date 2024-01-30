@@ -17,8 +17,7 @@ namespace Portfolio.Controllers
         {
             return View();
         }
-
-        public IActionResult About()
+        public IActionResult Education()
         {
             return View();
         }
@@ -27,10 +26,6 @@ namespace Portfolio.Controllers
             return View();
         }
         public IActionResult PetProjects()
-        {
-            return View();
-        }
-        public IActionResult Portfolio()
         {
             return View();
         }
