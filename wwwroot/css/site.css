@@ -1,5 +1,7 @@
 html {
     font-size: 14px;
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -10,15 +12,6 @@ html {
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-    position: relative;
-    min-height: 100%;
-}
-
-body {
-    margin-bottom: 60px;
 }
 
 header {
@@ -38,28 +31,30 @@ header {
             color: brown;
         }
 
+body {
+    margin-bottom: 60px;
+}
+
 footer {
     font-weight: bold;
     text-transform: uppercase;
 }
 
 
-
-/*ѕет-проекты
-*/
+/*ѕет-проекты*/
 .article-wrapper {
     transition: 0.15s all ease-in-out;
     border-radius: 10px;
     padding: 25px;
     border: 5px solid transparent;
     cursor: pointer;
-    background-color: white;
+    background-color: #f6d4cc;
 }
 
     .article-wrapper:hover {
         -webkit-box-shadow: 10px 10px 10px 10px 0 #ffffff, 20px 20px 20px 20px 0 #ffffff;
         box-shadow: 10px 10px 10px 10px 0 #ffffff, 20px 20px 20px 20px 0 #ffffff;
-        border-color: #a6c2f0;
+        border-color: #d4a59a;
     }
 
     .article-wrapper:active {
@@ -76,8 +71,11 @@ footer {
     display: -ms-flexbox;
     display: flex;
     place-content: flex-start;
-    color:black;
 }
+
+    .types span {
+        color: black;
+    }
 
 .rounded-lg {
     border-radius: 10px;
@@ -87,7 +85,7 @@ footer {
     -webkit-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
-    background-color: #a6c2f0;
+    background-color: #d4a59a;
 }
 
 .project-info {
@@ -152,27 +150,87 @@ footer {
 }
 
 
-.svg {
-    width: 25px;
-    height: 25px;
-    transform: translateY(25%);
-    fill: var(--font-color);
+/* нопка "посмотреть код"*/
+button.check-code {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    width: 15rem;
+    height: auto;
 }
 
-.card__links {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-self: flex-end;
-}
-
-    .card__links .link {
-        color: var(--font-color);
-        font-weight: 600;
-        font-size: 15px;
-        text-decoration: none;
+    button.check-code .circle {
+        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+        position: relative;
+        display: block;
+        margin: 0;
+        width: 3rem;
+        height: 3rem;
+        background: #d4a59a;
+        border-radius: 1.625rem;
     }
 
-        .card__links .link:hover {
-            text-decoration: underline;
+        button.check-code .circle .icon {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
         }
+
+            button.check-code .circle .icon.arrow {
+                transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+                left: 0.625rem;
+                width: 1.125rem;
+                height: 0.125rem;
+                background: #fff;
+            }
+
+                button.check-code .circle .icon.arrow::before {
+                    position: absolute;
+                    content: "";
+                    top: -0.29rem;
+                    right: 0.0625rem;
+                    width: 0.625rem;
+                    height: 0.625rem;
+                    border-top: 0.125rem solid #fff;
+                    border-right: 0.125rem solid #fff;
+                    transform: rotate(45deg);
+                }
+
+    button.check-code .button-text {
+        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0.75rem 0;
+        margin: 0 0 0 1.85rem;
+        color: #282936;
+        font-weight: 700;
+        line-height: 1.6;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+button:hover .circle {
+    width: 100%;
+}
+
+    button:hover .circle .icon.arrow {
+        background: #fff;
+        transform: translate(1rem, 0);
+    }
+
+button:hover .button-text {
+    color: #fff;
+}
