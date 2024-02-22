@@ -21,7 +21,7 @@ namespace Portfolio.Controllers
         {
             return View();
         }
-        public IActionResult Skills()
+        public IActionResult Skill()
         {
             return View();
         }
